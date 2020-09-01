@@ -2,11 +2,29 @@
 
 个人感觉count++，是要把内存数据复制到加法寄存器到，所以肯定存在复制数据问题，不会是原子性的，多个线程同时操作会存在数据被覆盖到情况。
 
-##### 2、redis对单个key的操作，如何增加并发量
+参考
+
+[Java 并发基础——线程安全性](https://www.cnblogs.com/NeilZhang/p/8682266.html)
+
+[Java原子操作AtomicInteger的用法](https://www.jianshu.com/p/509aca840f6d)
+
+[Java多线程i++线程安全问题，volatile和AtomicInteger解释？](https://segmentfault.com/q/1010000006733274)
+
+##### 2、redis对单个key的操作，如何增加并发量,，如统计单个接口数量的次数pv
+
+方案1:接口数量pv可以放在进程全局变量里面，如果pv增加到一定数量或者到一段时间定时写入到redis（incr命令），这个方法不完美，存在误差，因为不是实时上报，假如进程被kill了，那么就有一定的数量没有上报
+
+方案2:由于redis使用到是集群，可以设置多个key，分布到不同的redis里面，然后统计这些key的value的总和
+
+参考[关于Redis热点key的一些思考](https://juejin.im/post/6844903886667382798)
+
+如果是统计接口uv的话，可以参考[浅析网站PV/UV统计系统的原理及其设计](https://blog.yuanpei.me/posts/3494408209/)
 
 ##### 3、redis如何利用多核多线程
 
 ##### 4、java的ArrayList和LinkList区别，操作的时间复杂度,arraylist如何很长的情况下，内部数据结构如何变化，是否影响时间复杂度
+
+参考[When to use LinkedList over ArrayList in Java?](https://stackoverflow.com/questions/322715/when-to-use-linkedlist-over-arraylist-in-java)
 
 ##### 5、hashmap的内部原理，查找、插入原理和时间复杂度，碰撞系数为什么用0.75，内部红黑树的时间复杂度是多少？python的dict的内部数据结构
 
@@ -30,10 +48,16 @@
 
 ##### 7、资金的字段可以用浮点数吗？浮点数相加会不会导致精度问题，比如1.11+1.12会不会有精度问题
 
+资金不能用浮点数，就算小数点少的浮点数相加也会存在精度问题，因为有的十进制小数是没办法用二进制精确表示的，比如0.33
+
 ##### 8、mysql如何避免脏数据
 
 ##### 9、分布式锁如何解决脏数据，redis的getset的原理
 
+面试的时候说了getset，但是因为隔了一年多，忘了原理，所以答不上来，实际上使用set(ex, nx)就行了
+
 ##### 10、堆和栈的区别，方法内部的临时变量是放在堆里还是栈里
+
+[堆与栈的区别](https://blog.csdn.net/K346K346/article/details/80849966)
 
 ##### 11、MYSQL、Mongo、Redis主从同步原理
