@@ -4,6 +4,8 @@
 
 参考
 
+[字节跳动一面：i++ 是线程安全的吗？](https://www.javazhiyin.com/66316.html)
+
 [Java 并发基础——线程安全性](https://www.cnblogs.com/NeilZhang/p/8682266.html)
 
 [Java原子操作AtomicInteger的用法](https://www.jianshu.com/p/509aca840f6d)
