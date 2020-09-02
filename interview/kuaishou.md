@@ -23,6 +23,7 @@
 如果是统计接口uv的话，可以参考[浅析网站PV/UV统计系统的原理及其设计](https://blog.yuanpei.me/posts/3494408209/)
 
 ##### 3、redis如何利用多核多线程
+[Redis 6.0 多线程 IO 处理过程详解 ](https://ruby-china.org/topics/39925)
 
 ##### 4、java的ArrayList和LinkList区别，操作的时间复杂度,arraylist如何很长的情况下，内部数据结构如何变化，是否影响时间复杂度
 
