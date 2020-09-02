@@ -53,6 +53,7 @@
 资金不能用浮点数，就算小数点少的浮点数相加也会存在精度问题，因为有的十进制小数是没办法用二进制精确表示的，比如0.33
 
 ##### 8、mysql如何避免脏数据
+参考[再谈Transaction——MySQL事务处理分析](https://juejin.im/post/6844903974298976269)
 
 ##### 9、分布式锁如何解决脏数据，redis的getset的原理
 
@@ -63,10 +64,10 @@
 [堆与栈的区别](https://blog.csdn.net/K346K346/article/details/80849966)
 
 ##### 11、MYSQL、Mongo、Redis主从同步原理
-
 《高性能mysql》449页
-
 [MySQL——主从复制与读写分离](https://zhuanlan.zhihu.com/p/68035302)
+[深入浅出MongoDB复制](https://mongoing.com/archives/5200)
+[Redis主从复制的配置和实现原理](https://juejin.im/post/6844903943764443149)
 
 ##### 12、你们的QPS有多少？
 之前有接近100万日活的时候，忘记了QPS，现在5万日活，最高QPS有239，推算当时应该是有四千多的，但是面试的时候有点紧张，说了几百，当时估计怀疑我说的百万日活有造假的嫌疑，哎
