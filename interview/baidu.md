@@ -11,6 +11,9 @@ floyd算法了解下
 第一个事务：select * where name < n from user for update
 第二个事务：insert into user (name = n)(插入一条name为n的数据)
 请问第二条事务会不会阻塞第一条事务
+答：会，参考以下博客
+[MySQL的SELECT ...for update](https://www.cnblogs.com/wxgblogs/p/6849064.html)
+[mysql select for update + 事务处理数据一致性](https://blog.csdn.net/leyangjun/article/details/88633588)
 
 2、两个栈实现一个队列
 
