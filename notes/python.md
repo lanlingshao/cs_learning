@@ -20,3 +20,7 @@
 
 [记一次面试问题——Python 垃圾回收机制](https://testerhome.com/topics/16556)
 
+#### 2、闭包
+
+[理解Python闭包概念](https://www.cnblogs.com/yssjun/p/9887239.html)
+
