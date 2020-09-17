@@ -51,3 +51,10 @@ test(3)
 
 [python玄学系列(第二集)：这大概是最全面最通俗易懂的python闭包了](https://zhuanlan.zhihu.com/p/102462850)
 
+#### 3、协程
+
+[什么是协程 ？](https://juejin.im/post/6844903921471717389)
+
+[协程（维基）](https://zh.wikipedia.org/wiki/%E5%8D%8F%E7%A8%8B)
+
+[Python 3.5 协程原理](https://juejin.im/entry/6844903428229955597)
