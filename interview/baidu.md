@@ -18,5 +18,8 @@ floyd算法了解下
 2、两个栈实现一个队列
 
 3、随机抽奖算法，不知道有多少个人要抽奖，抽奖的时候马上决定是不是中奖，怎样保证公平性
-https://gorpeln.com/article/15573877312
-可以参考这个算法
+ [水塘抽样算法](https://www.cnblogs.com/krcys/p/9121487.html) 
+可以参考这个算法，这个算法无法当时确定就中奖，但是可以立马确定没有中奖，只有抽奖结束后，才能获得中奖的人
+
+同时还有[382. Linked List Random Node](https://leetcode.com/problems/linked-list-random-node/)这道题也是类似原理，
+
