@@ -2,8 +2,9 @@
 
 ##### 2、消息队列用什么？如何选型？redis的消息队列跟rabitmq有什么区别？
 
-##### 3、合并2个有序数组，不用额外空间存储
+参考[Redis与RabbitMQ作为消息队列的比较](https://www.cnblogs.com/afeige/p/10908960.html)
 
+##### 3、合并2个有序数组，不用额外空间存储
 参考[88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
 
 ##### 4、合并k有有序数组
