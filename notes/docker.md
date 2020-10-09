@@ -16,7 +16,7 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-#### DockerFile
+### DockerFile
 
 指令含义
 
@@ -70,13 +70,13 @@ RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 CMD ["python3", "app.py", "--host=0.0.0.0"]
 ```
 
-#### Docker镜像使用
+### Docker镜像使用
 
-##### 列出镜像列表
+#### 列出镜像列表
 
 ```$ docker images```
 
-##### 创建镜像
+#### 创建镜像
 
 当我们从 docker 镜像仓库中下载的镜像不能满足我们的需求时，我们可以通过以下两种方式对镜像进行更改。
 
@@ -92,7 +92,7 @@ CMD ["python3", "app.py", "--host=0.0.0.0"]
 - **-t** ：指定要创建的目标镜像名，冒号后面是镜像的TAG
 - **.** ：Dockerfile 文件所在目录，可以指定Dockerfile 的绝对路径
 
-##### 设置镜像标签
+#### 设置镜像标签
 
 我们可以使用 docker tag 命令，为镜像添加一个新的标签。
 
@@ -103,19 +103,19 @@ CMD ["python3", "app.py", "--host=0.0.0.0"]
 - 860c279d2fec为镜像的IMAGE ID
 - hello_flask:0.2为新的镜像名和tag
 
-##### 删除镜像
+#### 删除镜像
 
 删除名为hello_flask，tag为0.1的镜像：
 
 ```$ docker rmi hello_flask:0.1```
 
-#### Docker容器使用
+### Docker容器使用
 
-##### 查看所有的容器
+#### 查看所有的容器
 
 ```$ docker ps -a```
 
-##### 启动容器
+#### 启动容器
 
 1. 通过镜像启动
 
@@ -137,7 +137,7 @@ CMD ["python3", "app.py", "--host=0.0.0.0"]
 
    b750bbbcfd88 为容器id
 
-##### 后台运行
+#### 后台运行
 
 在大部分的场景下，我们希望 docker 的服务是在后台运行的，我们可以过 -d 指定容器的运行模式。
 
@@ -145,7 +145,7 @@ CMD ["python3", "app.py", "--host=0.0.0.0"]
 
 **注：**加了 -d 参数默认不会进入容器，想要进入容器需要使用指令 **docker exec**（下面会介绍到）。
 
-##### 停止容器
+#### 停止容器
 
 ```$ docker stop <容器 ID>```
 
@@ -153,7 +153,7 @@ CMD ["python3", "app.py", "--host=0.0.0.0"]
 
 ```$ docker restart <容器 ID>```
 
-##### 进入容器
+#### 进入容器
 
 在使用 **-d** 参数时，容器启动后会进入后台。此时想要进入容器，可以通过以下指令进入：
 
@@ -170,11 +170,11 @@ CMD ["python3", "app.py", "--host=0.0.0.0"]
 
    ```$ docker exec -it <容器 ID> /bin/bash```
 
-##### 删除容器
+#### 删除容器
 
 ```$ docker rm -f <容器 ID>```
 
-##### 容器启动为web应用
+#### 容器启动为web应用
 
 ```$ docker run -d -p 8000:5000 --name hello_app hello_flask:0.1 ```
 
@@ -185,7 +185,7 @@ CMD ["python3", "app.py", "--host=0.0.0.0"]
 - hello_app为自定义的容器名称
 - hello_flask:0.1 为镜像id与tag
 
-##### 查看 WEB 应用程序日志
+#### 查看 WEB 应用程序日志
 
 可以通过错误日志定位容器**启动失败**的原因
 
