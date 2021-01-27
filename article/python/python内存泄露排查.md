@@ -62,7 +62,7 @@ Line #    Mem usage    Increment  Occurences   Line Contents
 创建一个全局的ab_test_client连接，每次调用request_test_config方法的时候引用ab_test_client连接，而不是重新创建一个连接。代码如下：
 
 ```python
-	ab_test_channel = grpc.insecure_channel(ABTest_RPC_ADDR)
+  ab_test_channel = grpc.insecure_channel(ABTest_RPC_ADDR)
   ab_test_client = ab_test_pb2_grpc.StragegyStub(ab_test_channel)
   
   def request_test_config(cls, md5_id):
