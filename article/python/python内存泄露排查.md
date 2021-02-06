@@ -55,7 +55,7 @@ Line #    Mem usage    Increment  Occurences   Line Contents
 
 现在已经知道发生内存泄露的代码位置了，那么为什么会泄露呢？这个问题也是分析了好久，具体原因如下：
 
-这个request_test_config方法中，每一次请求都创建了一个ab_test_client，而ab_test_client是一个grpc的连接，也就是说，每次请求都会新建一个grpc连接。而这个代码是运行在定时框架**apscheduler**中的一个**BackgroundScheduler**定时任务中的，因为这个定时任务是后台周期运行的线程，而这个线程是不会被销毁了，所以内存不会回收。经过验证，这段代码如果运行在flask的http请求代码里面的话，内存不会增加，因为请求返回给客户端后，线程就销毁了，内存也就回收了。
+这个request_test_config方法中，每一次请求都创建了一个ab_test_client，而ab_test_client是一个grpc的连接，也就是说，每次请求都会新建一个grpc连接。而这个代码是运行在定时框架**apscheduler**中的一个**BackgroundScheduler**定时任务中的，因为这个定时任务是后台周期运行的线程，而这个线程是不会被销毁了(通过查看线程id发现线程id不变)，所以内存不会回收。经过验证，这段代码如果运行在flask的http请求代码里面的话，内存不会增加，因为请求返回给客户端后，线程就销毁了，内存也就回收了。
 
 **解决方案**：
 
