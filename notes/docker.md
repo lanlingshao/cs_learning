@@ -169,6 +169,8 @@ CMD ["python3", "app.py", "--host=0.0.0.0"]
 2. exec 命令
 
    ```$ docker exec -it <容器 ID> /bin/bash```
+   如果无法进入容器，报错"OCI runtime exec failed: exec failed: container_linux.go:370: starting container process caused: exec: "bash": executable file not found in $PATH: unknown"，可以使用以下命令代替
+   ```$ docker exec -it <容器 ID> /bin/sh```
 
 #### 删除容器
 
