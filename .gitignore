@@ -1,0 +1,10 @@
+*.pyc
+*.swp
+venv/
+venv2/
+.idea/
+.vscode/
+*.class
+java/leetcode.iml
+java/out/
+
