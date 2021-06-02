@@ -9,8 +9,7 @@
 
 mongo新版本也支持事务了
 
-mongo对于数据类型没有约束，同一个表中的同一个字段在不同的document中可以设置为不同的数据类型
-
+mysql数据类型没有dict、list，mongo中有
 mongo没有强制约束字段的类型，一个文档中该字段是字符串，在另一个文档中可以定义为int，或者list，dict等结构，如果要约束字段的类型的话，只能在ORM定义表字段的时候约束
 
 http://ifeve.com/mongodb%E5%92%8Cmysql%E5%AF%B9%E6%AF%94%E8%AF%91/
