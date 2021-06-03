@@ -1,4 +1,4 @@
-[面试官，不要再问我三次握手和四次挥手](https://segmentfault.com/a/1190000020610336)
+[面试官，不要再问我三次握手和四次挥手](https://yuanrengu.com/2020/77eef79f.html)
 此文章写得很好，对面试很有帮助，一定要再看下
 
 ## TCP
@@ -149,4 +149,5 @@ TCP KeepAlive 的基本原理是，隔一段时间给连接对端发送一个探
 from https://hit-alibaba.github.io/interview/basic/network/TCP.html
 
 ### TCP拥塞控制
+[图解 TCP 重传、滑动窗口、流量控制、拥塞控制](https://zhuanlan.zhihu.com/p/135932018)
 
