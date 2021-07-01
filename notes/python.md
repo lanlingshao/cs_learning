@@ -20,7 +20,7 @@
   - **手动回收**：使用gc模块中的collect 方法
   - **程序退出**
 
-参考[Python垃圾回收中引用计数、标记清除、分代回收机制详解](https://www.pythonf.cn/read/26626)
+参考
 
 [Python垃圾回收机制](https://zhuanlan.zhihu.com/p/83251959)
 
@@ -53,13 +53,30 @@ test(3)
 
 3、内嵌函数需要被返回（这一点最重要，是区别普通嵌套函数与闭包的本质）
 
+闭包用处：
+
+有了闭包，我们可以不使用全局变量，要知道，在任何一门语言中，全局变量都是被谨慎使用了，稍不注意，就会出问题。
+
+还有一个很大的用处，把一些数据和函数联系起来，这大大简化了代码，也提升了可读性
+
 [理解Python闭包概念](https://www.cnblogs.com/yssjun/p/9887239.html)
 
 [python玄学系列(第二集)：这大概是最全面最通俗易懂的python闭包了](https://zhuanlan.zhihu.com/p/102462850)
 
+[python装饰器的原理和使用](https://segmentfault.com/a/1190000019506549)
+
 #### 3、协程
 
-[什么是协程 ？](https://juejin.im/post/6844903921471717389)
+协程是一种用户态的轻量级线程，即协程是由**用户程序**自己**控制调度**的。不是操作系统控制
+
+总结协程的特点：
+
+1. **必须在只有一个单线程里实现并发**
+2. **修改共享数据不需加锁**
+3. **用户程序里自己保存多个控制流的上下文栈**
+4. **附加：一个协程遇到IO操作自动切换到其它协程（如何实现检测IO，yield、greenlet都无法实现，就用到了gevent模块（select机制））**
+
+[Python之协程](https://www.cnblogs.com/russellyoung/p/python-zhi-xie-cheng.html)
 
 [协程（维基）](https://zh.wikipedia.org/wiki/%E5%8D%8F%E7%A8%8B)
 
