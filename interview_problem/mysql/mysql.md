@@ -60,5 +60,14 @@ B+树的叶子节点和非叶子节点结构相同
 
 #### mysql分页查询优化
 
-#### mysql
+#### mysql如何防止sql注入
+使用pymysql提供的参数化语句防止注入
+内部执行参数化生成的SQL语句，对特殊字符进行了加\转义，避免注入语句生成
+例如：
+select * from project where id = 1 or 1 = 1,
+会被转义成select * from project where id = '1 or 1 = 1',导致只返回id=1的记录，不会返回全表记录
+select * from project where name = 'wang' or 1 = 1
+会被转义成select * from project where name = '\'wang\' or \'1 = 1\''，不返回任何记录，避免了返回全表记录
+
+[PyMySQL防止SQL注入](https://www.cnblogs.com/freely/p/6798717.html)
 
