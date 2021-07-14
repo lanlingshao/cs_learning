@@ -63,6 +63,20 @@
 事务7: update user set name = 'dfdf' where age=31;       不阻塞
 # TODO 待总结经验
 
+例子7:
+事务1: select * from user where age<=30 for update;
+事务2: insert into user (name, age) values ('vcvv',28);  阻塞
+事务3: insert into user (name, age) values ('vcvv',29);  阻塞
+事务4: insert into user (name, age) values ('vcvv',30);  阻塞
+事务4: insert into user (name, age) values ('vcvv',31);  阻塞
+事务5: update user set name = 'dfdf' where age=28;       阻塞
+事务6: update user set name = 'dfdf' where age=29;       阻塞
+事务7: update user set name = 'dfdf' where age=30;       阻塞
+事务7: update user set name = 'dfdf' where age=31;       阻塞
+# TODO 待总结经验
+
+
+
 总结：
 - 对于主键指定值或者范围的悲观锁，只会导致行锁
 - 对于非主键的指定值或者范围的查询加悲观锁，分为两种情况：
