@@ -86,6 +86,9 @@
   1、有索引，导致行锁**（这里有个特例，就是如果age<30的话，age=30的update会阻塞，但是insert不会阻塞，原理是使用了next_key_lock）**。
   2、无索引，导致表锁
 
+《MySQL技术内幕》6.8中说，innodb引擎不是根据每条记录来产生行锁的，而是根据每个事务的访问的每个页对锁进行管理的，可能是因为这个原因，才导致锁住的范围不确定。
+可以参考[Innodb行锁源码学习](https://www.cnblogs.com/cchust/p/4255499.html)
+
 参考以下博客
 [MySQL的SELECT ...for update](https://www.cnblogs.com/wxgblogs/p/6849064.html)
 [mysql select for update + 事务处理数据一致性](https://blog.csdn.net/leyangjun/article/details/88633588)
